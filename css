@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1.5s ease-in-out;
+}
+
+.welcome-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  text-align: center;
+}
+
+.welcome-screen button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  background: #ff6ec4;
+  background: linear-gradient(45deg, #ff6ec4, #7873f5);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.welcome-screen button:hover {
+  transform: scale(1.1);
+}
+
+.app-container {
+  padding: 20px;
+  color: white;
+  backdrop-filter: blur(8px);
+  min-height: 100vh;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.emoji {
+  font-size: 40px;
+  animation: float 2s infinite alternate ease-in-out;
+}
+
+@keyframes float {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-10px); }
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 200px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+.search-bar button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: var(--buttonColor, #00f2fe);
+  color: black;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-bar button:hover {
+  background: var(--buttonHoverColor, #4facfe);
+}
+
+.weather-main h1 {
+  font-size: 60px;
+  margin: 10px 0;
+}
+
+.weather-details button {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: var(--buttonColor, #ff6ec4);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.weather-details button:hover {
+  transform: scale(1.05);
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.8);
+  padding: 30px;
+  border-radius: 20px;
+  display: none;
+  z-index: 10;
+}
+
+.popup h3, .popup h4 {
+  margin-bottom: 10px;
+}
+
+.popup button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: var(--buttonColor, #00f2fe);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  color: black;
+}
