@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WeatherSense+</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="welcome-screen" id="welcomeScreen">
+    <h1>Welcome to WeatherSense+</h1>
+    <button onclick="startApp()">Enter</button>
+  </div>
+
+  <div class="app-container" id="appContainer" style="display: none;">
+    <div class="top-bar">
+      <div class="emoji" id="dayEmoji">🌞</div>
+      <div class="search-bar">
+        <input type="text" id="cityInput" placeholder="Enter a city...">
+        <button onclick="searchWeather()">Search</button>
+      </div>
+    </div>
+
+    <div class="weather-main">
+      <h2 id="cityName">City Name</h2>
+      <p id="weatherDescription">Weather description</p>
+      <h1 id="temperature">0°C</h1>
+    </div>
+
+    <div class="weather-details">
+      <button onclick="togglePopup('hourlyPopup')">Hourly Forecast</button>
+      <button onclick="togglePopup('dailyPopup')">7-Day Forecast</button>
+      <button onclick="togglePopup('alertsPopup')">Alerts</button>
+    </div>
+
+    <!-- POPUPS -->
+    <div class="popup" id="hourlyPopup">
+      <h3>Hourly Forecast</h3>
+      <div id="hourlyData"></div>
+      <button onclick="togglePopup('hourlyPopup')">Close</button>
+    </div>
+
+    <div class="popup" id="dailyPopup">
+      <h3>7-Day Forecast</h3>
+      <div id="dailyData"></div>
+      <button onclick="togglePopup('dailyPopup')">Close</button>
+    </div>
+
+    <div class="popup" id="alertsPopup">
+      <h3>Alerts</h3>
+      <div id="alertsData"></div>
+      <h4>Awareness Tip:</h4>
+      <p id="awarenessTip"></p>
+      <button onclick="togglePopup('alertsPopup')">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
